@@ -44,6 +44,7 @@ DOWNLOAD_DELAY = 5
 # CONCURRENT_REQUESTS_PER_IP = 20
 # Disable cookies (enabled by default)
 COOKIES_ENABLED = True
+COOKIES_DEBUG = True
 
 # Disable Telnet Console (enabled by default)
 # TELNETCONSOLE_ENABLED = False
@@ -56,22 +57,23 @@ COOKIES_ENABLED = True
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-# SPIDER_MIDDLEWARES = {
-#    'webscrapping.middlewares.WebscrappingSpiderMiddleware': 543,
-# }
+SPIDER_MIDDLEWARES = {
+    "webscrapping.middlewares.WebscrappingSpiderMiddleware": 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'webscrapping.middlewares.WebscrappingDownloaderMiddleware': 543,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    "webscrapping.middlewares.WebscrappingDownloaderMiddleware": 543,
+}
 
-# DOWNLOADER_MIDDLEWARES = {
-#    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
-#    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
-# }
-# 'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
-# 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+DOWNLOADER_MIDDLEWARES = {
+    #    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+    # "scrapy_proxy_pool.middlewares.ProxyPoolMiddleware": 610,
+    #    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
+    # 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+    "scrapy.downloadermiddlewares.cookies.CookiesMiddleware": 700,
+}
 
 
 # Enable or disable extensions
